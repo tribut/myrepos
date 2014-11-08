@@ -14,6 +14,7 @@ adminemail: joey@kitenet.net
 # users who are wiki admins
 adminuser:
 - http://joeyh.name/
+- https://www.google.com/accounts/o8/id?id=AItOawl9sYlePmv1xK-VvjBdN-5doOa_Xw-jH4U
 # users who are banned from the wiki
 banned_users: []
 # where the source of the wiki is located
@@ -24,6 +25,8 @@ destdir: /home/b-myrepos/public_html
 url: http://myrepos.branchable.com
 # url to the ikiwiki.cgi
 cgiurl: http://myrepos.branchable.com/ikiwiki.cgi
+# do not adjust cgiurl if CGI is accessed via different URL
+reverse_proxy: 0
 # filename of cgi wrapper to generate
 cgi_wrapper: /var/www/b-myrepos/ikiwiki.cgi
 # mode for cgi_wrapper (can safely be made suid)
@@ -111,8 +114,7 @@ hardlink: 1
 # extra library and plugin directory
 libdir: /home/b-myrepos/.ikiwiki
 # environment variables
-ENV:
-  TMPDIR: /home/b-myrepos/tmp
+#ENV: ''
 # time zone name
 timezone: GMT
 # regexp of normally excluded files to include
@@ -126,11 +128,13 @@ allow_symlinks_before_srcdir: 0
 # cookie control
 cookiejar:
   file: /home/b-myrepos/.ikiwiki/cookies
+# set custom user agent string for outbound HTTP requests e.g. when fetching aggregated RSS feeds
+useragent: ikiwiki/3.20141017
 
 ######################################################################
 # core plugins
 #   (branchable, editpage, git, gitpush, htmlscrubber, ikiwikihosting,
-#    inline, link, meta, parentlinks)
+#    inline, link, meta, parentlinks, templatebody)
 ######################################################################
 
 # branchable plugin
@@ -308,8 +312,8 @@ po_link_to: default
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
-#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
+#   (404, attachment, comments, editdiff, edittemplate, google, goto,
+#    mirrorlist, remove, rename, repolist, search, theme, userlist,
 #    websetup, wmd)
 ######################################################################
 
@@ -335,10 +339,6 @@ comments_commit: 1
 # Restrict formats for comments to (no restriction if empty)
 comments_allowformats: ''
 
-# getsource plugin
-# Mime type for returned source.
-#getsource_mimetype: text/plain; charset=utf-8
-
 # mirrorlist plugin
 # list of mirrors
 #mirrorlist: {}
@@ -355,7 +355,7 @@ repositories:
 # path to the omega cgi program
 omega_cgi: /usr/lib/cgi-bin/omega/omega
 # use google site search rather than internal xapian index?
-google_search: 1
+google_search: 0
 
 # theme plugin
 # name of theme to enable
