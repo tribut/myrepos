@@ -14,7 +14,7 @@ adminemail: joey@kitenet.net
 # users who are wiki admins
 adminuser:
 - http://joeyh.name/
-- https://www.google.com/accounts/o8/id?id=AItOawl9sYlePmv1xK-VvjBdN-5doOa_Xw-jH4U
+- https://www.google.com/accounts/o8/id?id=AItOawkeKIPnjuWDB4uS8vW09DfK7FPAGQxfFs0
 # users who are banned from the wiki
 banned_users: []
 # where the source of the wiki is located
