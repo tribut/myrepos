@@ -170,7 +170,7 @@ gitmaster_branch: master
 # git repository urls that changes are pushed to
 git_push_to:
 - git@github.com:joeyh/myrepos.git
-- joey@kitenet.net:/srv/git/mr.git
+- joey@git.kitenet.net:/srv/git/mr.git
 
 # htmlscrubber plugin
 # PageSpec specifying pages not to scrub
@@ -219,7 +219,7 @@ pingurl: []
 blogspam_pagespec: postcomment(*)
 # options to send to blogspam server
 #blogspam_options: blacklist=1.2.3.4,blacklist=8.7.6.5,max-links=10
-# blogspam server XML-RPC url
+# blogspam server JSON url
 #blogspam_server: ''
 
 # httpauth plugin
