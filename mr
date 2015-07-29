@@ -1134,7 +1134,7 @@ sub selectrepos {
 		my $subdir=$repo->{subdir};
 
 		next if $subdir eq 'DEFAULT';
-		my $dir=repodir($repo);
+		my $dir=abs_path(repodir($repo));
 		my $d=$directory;
 		$dir.="/" unless $dir=~/\/$/;
 		$d.="/" unless $d=~/\/$/;
